@@ -7,5 +7,8 @@
     "test": "node ./node_modules/jest/bin/jest.js"
   },
   "author": "Kelvin Leeder",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
 }
