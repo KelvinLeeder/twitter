@@ -1,7 +1,9 @@
 const User = require('./../models/User')
 
 class UserService {
-    static creat (id, username, name) {
+    static create (id, username, name) {
         return new User(id, username, name, "Sin bio")
     }
 }
+
+module.exports = UserService
