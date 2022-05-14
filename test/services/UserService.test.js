@@ -7,7 +7,7 @@ describe("Test for UserService", () => {
         expect(user.username).toBe("KLeeder_07")
         expect(user.name).toBe("Kelvin")
         expect(user.id).toBe(1)
-        expect(user.bio).not.toBeundefined()
+        expect(user.bio).not.toBeUndefined()
 
     })
 })
