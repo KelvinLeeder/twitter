@@ -31,6 +31,7 @@ describe("Test for UserService", () => {
         const user1 = UserService.create(1, "KLeeder_01", "Kelvin")
         const user2 = UserService.create(1, "KLeeder_02", "Kelvin")
         const user3 = UserService.create(1, "KLeeder_03", "Kelvin")
+        const usernames = UserService.getAllUsernames([user1, user2, user3])
         expect(usernames).toContain("KLeeder_01")
         expect(usernames).toContain("KLeeder_02")
         expect(usernames).toContain("KLeeder_03")
