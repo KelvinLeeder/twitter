@@ -6,6 +6,7 @@ class User{
         this.bio = bio
         this.dateCreated = new Date()
         this.lastUpdate = new Date()
+
         }
 
         get getUsername(){

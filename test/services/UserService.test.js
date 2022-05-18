@@ -1,4 +1,5 @@
 const UserService = require('./../../app/services/UserService')
+const UserView = require('./../../app/views/UserView')
 
 describe("Test for UserService", () => {
 
@@ -37,4 +38,37 @@ describe("Test for UserService", () => {
         expect(usernames).toContain("KLeeder_03")
         
     })
+
+    test(" 5. Return an error object when try to create a new user wiht an null payload",()=>{
+        const payload = null
+        const result = UserView.createUser(payload)
+        expect(result.error).toMatch(/payload no existe/)
+    })
+
+
+    test("6. Return an error object when try to create a new user with a payload invalid properties", () => {
+        const payload = {username: null, name: 12, id: "id"}
+        const result = UserView.createUser(payload)
+        expect(result.error).toMatch(/necesitan tener un valor/)
+    })
+
+    test("7. Return an error object when try to create a new user with a payload with missing propierties", () =>{
+        const payload = {username: "Username"}
+        const result = UserView.createUser(payload)
+        expect(result.error).toMatch(/necesitan tener un valor/)
+    })
+
+    test ("8. Create a user by a given valid payload", ()=>{
+        const payload = {username: "username", id: 1, name:"name"}
+        const result = UserView.createUser(payload)
+        expect(result.name).toBe("name")
+        expect(result.username).toBe("username")
+        expect(result.id).toBe(1)
+
+    })
 })
+
+
+
+
+  
